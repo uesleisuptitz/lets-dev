@@ -1,7 +1,22 @@
-function Titulo(props: any) {
-  var titulo = props.titulo;
+interface TituloProps {
+  titulo: string;
+}
 
-  return <h1>{titulo} SSSS</h1>;
+function Titulo({ titulo }: TituloProps) {
+  return (
+    <h1
+      style={{
+        // Cor e peso da fonte, alinhamento e margem
+        color: "#7D2EBA",
+        fontWeight: 600,
+        fontStyle: "italic",
+        textAlign: "center",
+        marginBottom: "60px",
+      }}
+    >
+      {titulo}
+    </h1>
+  );
 }
 
 export default Titulo;
