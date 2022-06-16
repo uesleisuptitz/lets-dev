@@ -160,7 +160,6 @@ const FormCompleto: React.FC = () => {
             <InputButton
               type="file"
               name="curriculo"
-              value={curriculo}
               onChange={(e) => setCurriculo(e.target?.files[0])}
             />
           </ColumnInput>
