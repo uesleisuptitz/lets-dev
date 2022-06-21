@@ -1,16 +1,23 @@
 import React from "react";
 
 const Promisses: React.FC = () => {
-  const condicao = true;
+  // Condição para nossa promise
+  const motoristaAceitou = true;
 
+  // Nossa promise
   const promessa = new Promise((resolve, reject) => {
-    resolve("Deu certo!");
+    if (motoristaAceitou) {
+      resolve("Deu certo! Seu motorista está vindo.");
+    } else {
+      reject("Deu errado! Procure outro motorista!");
+    }
   });
 
+  // Executando nossa promise
   promessa
-    .then((resultado) => console.log(resultado))
+    .then((sucesso) => console.log(sucesso))
     .catch((erro) => console.log(erro))
-    .finally(() => console.log("Acabou!\n"));
+    .finally(() => console.log("Acabou!"));
 
   return (
     <div>
