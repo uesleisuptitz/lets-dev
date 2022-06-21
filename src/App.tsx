@@ -1,9 +1,11 @@
-import { FormBasico, FormCompleto } from "./telas";
+import { FormBasico, FormCompleto, Callback, Promise } from "./telas";
 
 function App() {
   return (
     // <FormBasico />
-    <FormCompleto />
+    // <FormCompleto />
+    // <Callback />
+    <Promise />
   );
 }
 
