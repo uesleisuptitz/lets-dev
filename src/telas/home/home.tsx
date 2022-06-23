@@ -38,7 +38,7 @@ const Home = () => {
     },
     {
       titulo: "A PAIPE e os Paipers",
-      link: "/consumindo-apis",
+      link: "/sobre-paipers",
       descricao:
         "Uma página bônus de presente para deixar o seu projeto ainda mais completo. E de quebra ficar por dentro do que acontece na Paipe.",
     },
