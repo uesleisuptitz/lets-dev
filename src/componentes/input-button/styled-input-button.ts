@@ -5,6 +5,8 @@ interface InputButtonProps {
 }
 
 export const InputButton = styled.input<InputButtonProps>`
+  text-align: center;
+
   //Adiciona estilização aos inputs
   &[type="submit"],
   &::-webkit-file-upload-button,
