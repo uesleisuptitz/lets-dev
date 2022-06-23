@@ -4,16 +4,12 @@ import {
   Callback,
   Promise,
   AsyncAwait,
+  Home,
+  ConsumindoApis,
 } from "./telas";
 
 function App() {
-  return (
-    // <FormBasico />
-    // <FormCompleto />
-    <Callback />
-    // <Promise />
-    // <AsyncAwait />
-  );
+  return <Home />;
 }
 
 export default App;
