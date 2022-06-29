@@ -1,39 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const AsyncAwait: React.FC = () => {
-  // Condição para nossa promise
-  const motoristaAceitou = true;
+  // estado
+  const [minhaFotoDePerfil, setMinhaFotoDePerfil] = useState();
 
-  // Início
-  console.log("Procurando motorista...");
-
-  // Nossa promise (função para receber parâmetros)
-  const promessa = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (motoristaAceitou) {
-          resolve("Deu certo! Seu motorista está vindo.");
-        } else {
-          reject("Deu errado! Procure outro motorista!");
-        }
-      }, 3000);
-    });
-  };
-
-  // Sem async / await
-  const resposta = promessa();
-  alert(resposta);
-
-  // Com async / await
-  // async function start() {
-  //   const resposta = await promessa();
-  //   alert(resposta);
-  // }
-  // start();
+  // requisição
+  axios
+    .get("https://api.github.com/users/uesleisuptitz")
+    .then((resposta) => {
+      setMinhaFotoDePerfil(resposta.data.avatar_url);
+    })
+    .catch((erro) => console.log("catch", erro))
+    .finally(() => console.log("Foi"));
 
   return (
     <div>
-      <h1>AsyncAwait</h1>
+      <img src={minhaFotoDePerfil} alt="Imagem Let's Dev" />
     </div>
   );
 };
