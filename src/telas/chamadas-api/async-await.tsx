@@ -8,10 +8,10 @@ const AsyncAwait: React.FC = () => {
   // requisição
   axios
     .get("https://api.github.com/users/uesleisuptitz")
-    .then((resposta) => {
+    .then((resposta: any) => {
       setMinhaFotoDePerfil(resposta.data.avatar_url);
     })
-    .catch((erro) => console.log("catch", erro))
+    .catch((erro: any) => console.log("catch", erro))
     .finally(() => console.log("Foi"));
 
   return (
