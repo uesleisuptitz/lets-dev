@@ -1,48 +1,19 @@
 import React, { useRef, FormEvent } from "react";
 
-const Home: React.FC = () => {
-  const formRef = useRef({
-    nome: "",
-    sobrenome: "",
-    idade: "",
-    count: 0,
-  });
+const Example: React.FC = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const mostrarValores = (event: FormEvent) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    if (formRef.current) {
-      formRef.current.count += 1;
-      console.log("formRef", formRef.current);
-    }
+    alert("Nome: " + inputRef?.current?.value);
   };
 
   return (
-    <div>
-      <form onSubmit={mostrarValores}>
-        <input
-          type="text"
-          name="nome"
-          onChange={(event) => (formRef.current.nome = event.target.value)}
-        />
-        <input
-          type="text"
-          name="sobrenome"
-          onChange={(event) => (formRef.current.sobrenome = event.target.value)}
-        />
-        <input
-          type="number"
-          name="idade"
-          onChange={(event) => (formRef.current.idade = event.target.value)}
-        />
-        <button type="submit">Mostrar valores</button>
-      </form>
-      <Logger />
-    </div>
+    <form onSubmit={handleSubmit}>
+      <label>Nome</label>
+      <input type="text" name="nome" ref={inputRef} />
+    </form>
   );
 };
 
-const Logger: React.FC = () => {
-  return <div></div>;
-};
-
-export default Home;
+export default Example;
