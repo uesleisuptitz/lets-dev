@@ -5,6 +5,7 @@ import Promise from "./chamadas-api/promise";
 import AsyncAwait from "./chamadas-api/async-await";
 import Home from "./home/home";
 import ConsumindoApis from "./consumindo-apis/consumindo-apis";
+import SobrePaipers from "./sobre-paipers/sobre-paipers";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   Callback,
   Promise,
   AsyncAwait,
+  SobrePaipers,
 };
