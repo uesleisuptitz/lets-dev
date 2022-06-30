@@ -69,6 +69,7 @@ const Home = () => {
         <s.GroupCards>
           {telas.map((card) => (
             <Card
+              key={card.titulo}
               titulo={card.titulo}
               link={card.link}
               descricao={card.descricao}
